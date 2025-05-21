@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Experto - Diagnóstico Respiratorio</title>
+    <link rel="stylesheet" href="medico.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Diagnóstico Respiratorio</h1>
+            <p class="description">Seleccione los síntomas que presenta el paciente para obtener un diagnóstico preliminar.</p>
+        </header>
+
+        <div class="main-content">
+            <section class="symptoms-section">
+                <h2>Síntomas</h2>
+                
+                <div class="symptom-group">
+                    <h3>Síntomas Respiratorios</h3>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="tos">
+                            Tos
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="tosseca">
+                            Tos seca
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="tosflema">
+                            Tos con flema
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="tossangre">
+                            Tos con sangre
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="dificultad_respiratoria">
+                            Dificultad para respirar
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="dolor_pecho">
+                            Dolor en el pecho
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="opresionpecho">
+                            Opresión en el pecho
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="sibilancias">
+                            Sibilancias
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="congestionnasal">
+                            Congestión nasal
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="secrecionnasal">
+                            Secreción nasal
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="estornudos">
+                            Estornudos
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="dolorgarganta">
+                            Dolor de garganta
+                        </label>
+                    </div>
+                </div>
+
+                <div class="symptom-group">
+                    <h3>Síntomas Generales</h3>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="fiebre">
+                            Fiebre
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="fatiga">
+                            Fatiga
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="dolorcuerpo">
+                            Dolor corporal
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="escalofrios">
+                            Escalofríos
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="checkbox" name="symptom" value="sudoracion">
+                            Sudoración
+                        </label>
+                    </div>
+                </div>
+
+                <div class="symptom-group">
+                    <h3>Duración de los Síntomas</h3>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="radio" name="duration" value="agudo">
+                            Agudo (menos de 3 semanas)
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="radio" name="duration" value="subagudo">
+                            Subagudo (3-8 semanas)
+                        </label>
+                    </div>
+                    <div class="symptom-item">
+                        <label>
+                            <input type="radio" name="duration" value="cronico">
+                            Crónico (más de 8 semanas)
+                        </label>
+                    </div>
+                </div>
+
+                <button id="diagnose-btn">Obtener Diagnóstico</button>
+            </section>
+
+            <section class="results-section">
+                <h2>Resultados</h2>
+                <div id="diagnosis-result">
+                    <h3 class="diagnosis-title">Diagnóstico Preliminar</h3>
+                    <div id="diagnosis-content"></div>
+                    <div class="severity-scale">
+                        <div class="severity-item mild">
+                            <h4>Leve</h4>
+                            <p>Riesgo bajo</p>
+                        </div>
+                        <div class="severity-item moderate">
+                            <h4>Moderado</h4>
+                            <p>Riesgo medio</p>
+                        </div>
+                        <div class="severity-item severe">
+                            <h4>Severo</h4>
+                            <p>Riesgo alto</p>
+                        </div>
+                    </div>
+                    <div class="recommendation">
+                        <h4>Recomendaciones</h4>
+                        <div id="recommendation-content"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <p class="disclaimer">
+            Este sistema es solo para fines educativos y no reemplaza la consulta médica profesional.
+            En caso de emergencia, busque atención médica inmediata.
+        </p>
+    </div>
+    <script src="medico.js"></script>
+</body>
+</html>
